@@ -9,10 +9,10 @@ Sistema de coleta e qualificação de projetos do Workana que combina scraping, 
 - **Persistência**: tabelas enriquecidas registram se o item já passou pela IA, resultado e metadados (modelo, tokens, timestamp).
 
 ```mermaid
-graph TD
-  A[Workana jobs JSON] -->|scraper| B[(SQLite: projects)]
-  B -->|status=pending| C[Analyzer (OpenAI)]
-  C -->|scope/valor/proposta| B
+flowchart TD
+  A[Workana jobs JSON] -->|scraper| B[(SQLite projects)]
+  B -->|status: pending| C[Analyzer (OpenAI)]
+  C -->|scope + valor + proposta| B
   B --> D[Flask Dashboard]
 ```
 
