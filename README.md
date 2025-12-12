@@ -11,8 +11,8 @@ Sistema de coleta e qualificação de projetos do Workana que combina scraping, 
 ```mermaid
 flowchart TD
   A[Workana jobs JSON] -->|scraper| B[(SQLite projects)]
-  B -->|status: pending| C[Analyzer (OpenAI)]
-  C -->|scope + valor + proposta| B
+  B -->|pending| C[Analyzer OpenAI]
+  C -->|resultado| B
   B --> D[Flask Dashboard]
 ```
 
